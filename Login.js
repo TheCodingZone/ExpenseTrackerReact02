@@ -16,15 +16,10 @@ const Login = () => {
     const enteredPassword=passwordInputRef.current.value;
     console.log(enteredEmail+" "+enteredPassword);
     signInWithEmailAndPassword(auth,enteredEmail,enteredPassword).then((response)=>{
-      if(response.ok){
-        
+      
         console.log(response);
         navigate('/Home');
-      }
-      else{
-        
-        setLoginMessge("Somthing went wrong!Please try again after sometime");
-      }
+     
     }).catch((error)=>{
       setLoginMessge(error.message);
       console.log("error"+" "+error.message);
